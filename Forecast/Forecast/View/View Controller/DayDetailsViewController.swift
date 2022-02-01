@@ -18,45 +18,30 @@ class DayDetailsViewController: UIViewController {
     @IBOutlet weak var currentDescriptionLabel: UILabel!
     
     //MARK: - Properties
-    var days: [Day] = []
-    
+   
     //MARK: - View Lifecyle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Conform to the TBVS Protocols
-        dayForcastTableView.delegate = self
-        dayForcastTableView.dataSource = self
         
-        DayContoller.fetchDays { tempDays in
-            guard let days = tempDays else {return}
-            self.days = days
-            DispatchQueue.main.async {
-                self.updateViews()
-                self.dayForcastTableView.reloadData()
-            }
-        }
+        dayForcastTableView.dataSource = self
+        dayForcastTableView.delegate = self
     }
     
     func updateViews() {
-        let currentDay = days[0]
-        cityNameLabel.text = currentDay.cityName
-        currentDescriptionLabel.text = currentDay.description
-        currentTempLabel.text = "\(currentDay.temp)F"
-        currentLowLabel.text = "\(currentDay.lowTemp)F"
-        currentHighLabel.text = "\(currentDay.highTemp)F"
+        
     }
-}
+    
+}// End of class
 
 //MARK: - Extenstions
 extension DayDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return days.count
+        return 16
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath) as? DayForcastTableViewCell else {return UITableViewCell()}
-        let day = days[indexPath.row]
-        cell.updateViews(day: day)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
+        
         return cell
     }
-}
+}// End of extension

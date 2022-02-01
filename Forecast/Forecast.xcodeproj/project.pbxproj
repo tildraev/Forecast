@@ -14,6 +14,8 @@
 		4157481D27A8875200FE8AA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4157481B27A8875200FE8AA8 /* LaunchScreen.storyboard */; };
 		4157482F27A8940600FE8AA8 /* DayDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4157482E27A8940600FE8AA8 /* DayDetailsViewController.swift */; };
 		4157483127A894CE00FE8AA8 /* DayForcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4157483027A894CE00FE8AA8 /* DayForcastTableViewCell.swift */; };
+		D25EB76027A9A1BA00974DC5 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25EB75F27A9A1BA00974DC5 /* Day.swift */; };
+		D25EB76327A9A5BB00974DC5 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25EB76227A9A5BB00974DC5 /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4157481E27A8875200FE8AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4157482E27A8940600FE8AA8 /* DayDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsViewController.swift; sourceTree = "<group>"; };
 		4157483027A894CE00FE8AA8 /* DayForcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForcastTableViewCell.swift; sourceTree = "<group>"; };
+		D25EB75F27A9A1BA00974DC5 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		D25EB76227A9A5BB00974DC5 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,9 @@
 		4157480F27A8875000FE8AA8 /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
-				4157482B27A889B600FE8AA8 /* Model */,
+				D25EB75D27A9995E00974DC5 /* Models */,
 				4157482527A8883C00FE8AA8 /* View */,
-				4157483227A89FFE00FE8AA8 /* Controller */,
+				D25EB75E27A9996400974DC5 /* Controllers */,
 				4157482427A8877500FE8AA8 /* Supporting Files */,
 				4157481627A8875000FE8AA8 /* Main.storyboard */,
 				4157481B27A8875200FE8AA8 /* LaunchScreen.storyboard */,
@@ -82,7 +86,6 @@
 		4157482527A8883C00FE8AA8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4157482627A8885C00FE8AA8 /* View Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,18 +99,29 @@
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
-		4157482B27A889B600FE8AA8 /* Model */ = {
+		D25EB75D27A9995E00974DC5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D25EB75F27A9A1BA00974DC5 /* Day.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		4157483227A89FFE00FE8AA8 /* Controller */ = {
+		D25EB75E27A9996400974DC5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D25EB76127A9A58C00974DC5 /* Model Controller */,
+				4157482627A8885C00FE8AA8 /* View Controller */,
 			);
-			path = Controller;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D25EB76127A9A58C00974DC5 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D25EB76227A9A5BB00974DC5 /* NetworkController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +197,9 @@
 			files = (
 				4157483127A894CE00FE8AA8 /* DayForcastTableViewCell.swift in Sources */,
 				4157482F27A8940600FE8AA8 /* DayDetailsViewController.swift in Sources */,
+				D25EB76327A9A5BB00974DC5 /* NetworkController.swift in Sources */,
 				4157481127A8875000FE8AA8 /* AppDelegate.swift in Sources */,
+				D25EB76027A9A1BA00974DC5 /* Day.swift in Sources */,
 				4157481327A8875000FE8AA8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
